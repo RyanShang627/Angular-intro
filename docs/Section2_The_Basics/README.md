@@ -149,3 +149,82 @@ The principle is that if you have more than three lines of html code, it is bett
 ## Working with Component Styles
 
 You can either do that inside the html file or using external css file.
+
+## Selector
+
+Component selector has to be unique. But there is a way to help you avoid that potential error: you can change the selector to the attribute. For example, in the 'servers.component.ts' file:
+
+```typescript
+@Component({
+  // select by component itself
+  selector: 'app-servers',
+  template: '<app-server></app-server><app-server></app-server>',
+  styleUrls: ['./servers.component.css'],
+})
+```
+
+Here the selector refers to the component itself, but we can also change it into an attribute by:
+
+```typescript
+@Component({
+  // select by the attribute
+  selector: '[app-servers]',
+  template: '<app-server></app-server><app-server></app-server>',
+  styleUrls: ['./servers.component.css'],
+})
+```
+
+And you need to change the way you use this component by referring to the attribute. In the 'app.component.html' file, it is changed to:
+
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>
+        I'm in the AppComponent!
+      </h3>
+      <hr />
+      <!-- app-servers is now an attribute -->
+      <div app-servers></div>
+    </div>
+  </div>
+</div>
+
+```
+
+Plus, if you would like to select the component by class, you can also select the component by its name in the 'servers.component.ts':
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  // select by class
+  selector: '.app-servers',
+  template: '<app-server></app-server><app-server></app-server>',
+  styleUrls: ['./servers.component.css'],
+})
+export class ServersComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+}
+
+```
+
+And we need to change the html file ('app.component.html') accordingly:
+
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>
+        I'm in the AppComponent!
+      </h3>
+      <hr />
+      <!-- select by class -->
+      <div class="app-servers"></div>
+    </div>
+  </div>
+</div>
+
+```

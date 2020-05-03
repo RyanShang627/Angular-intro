@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-servers',
-  // use 'template' instead of 'templateUrl'
-  // and directly write html code inside
+  // select by class
+  selector: '.app-servers',
   template: '<app-server></app-server><app-server></app-server>',
   styleUrls: ['./servers.component.css'],
 })
