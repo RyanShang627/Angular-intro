@@ -35,3 +35,19 @@ The server will run on localhost:4200 by default.
 ## TypeScript
 
 More features than vanilla JS (e.g. Types, Classes, Interfaces, ...). But TypeScript will be compiled to JavaScript when it is running. TypeScript is really familiar to JavaScript.
+
+## Install Bootstrap to the project
+
+Install Bootstrap package:
+
+```bash
+npm install --save bootstrap@3
+```
+
+Use the Bootstrap css:
+
+Add the Bootstrap css file inside the `angular.json` file: Add the following file:
+
+```json
+"node_modules/bootstrap/dist/css/bootstrap.min.css"
+```
