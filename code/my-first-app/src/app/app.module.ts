@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
+import { SuccessAlert } from './successAlert/successAlert.component';
 
 @NgModule({
-  declarations: [AppComponent, ServerComponent, ServersComponent],
+  declarations: [AppComponent, ServerComponent, ServersComponent, SuccessAlert],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
