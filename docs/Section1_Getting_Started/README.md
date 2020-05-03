@@ -31,3 +31,7 @@ ng serve
 ```
 
 The server will run on localhost:4200 by default.
+
+## TypeScript
+
+More features than vanilla JS (e.g. Types, Classes, Interfaces, ...). But TypeScript will be compiled to JavaScript when it is running. TypeScript is really familiar to JavaScript.
