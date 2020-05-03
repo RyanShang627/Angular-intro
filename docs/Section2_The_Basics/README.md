@@ -148,7 +148,32 @@ The principle is that if you have more than three lines of html code, it is bett
 
 ## Working with Component Styles
 
-You can either do that inside the html file or using external css file.
+You can either do that inside the html file or using external css file. No matter which way you operate the style, you need to know that the `styles` or `styleUrls` are arrays, since there could be more than one style.
+
+Note: when you would like to use the internal css style, you need to follow the rule like this:
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-warning-alert',
+  template: '<h4>This is a warning alert!</h4>',
+  // use backtick inside the array
+  styles: [
+    `
+      h4 {
+        color: red;
+      }
+    `,
+  ],
+})
+export class WarningAlertComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+}
+
+```
 
 ## Selector
 
