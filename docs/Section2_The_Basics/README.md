@@ -83,3 +83,67 @@ Or a simpler expression: (g: generate; c: component)
 ```bash
 ng g c servers
 ```
+
+Now you will find that the component is automatically created (including .ts, .html, and .css files), and the app module is updated as well.
+
+And we can use the new component in the 'app.component.html':
+
+```html
+<h3>
+  I'm in the AppComponent!
+</h3>
+<hr />
+<app-server></app-server>
+<app-servers></app-servers>
+
+```
+
+## Develop the template inside the TypeScript file
+
+It is possible to combine the html file and the TypeScript file in Angular. It looks very similar in Vue.js as the Vue provides a type of file called '.vue' which has template and script and style parts. All you need to do is to deal with the vue file.
+
+Here it is similar, and you can write the html script inside the Typescript file. Take the servers component ('code/my-first-app/src/app/servers/servers.component.ts') as an example:
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-servers',
+  templateUrl: './servers.component.html',
+  styleUrls: ['./servers.component.css']
+})
+export class ServersComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+```
+
+In this example, the component uses an external html file as the template, in this case, it uses the 'templateUrl' to import that html file. Now we would like to make changes so that we can write template inside the TypeScript file:
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-servers',
+  // use 'template' instead of 'templateUrl'
+  // and directly write html code inside
+  template: '<app-server></app-server><app-server></app-server>',
+  styleUrls: ['./servers.component.css']
+})
+export class ServersComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+```
+
+The principle is that if you have more than three lines of html code, it is better to write it inside an external html file; however, it is convenient to write the html code inside the typescript file if it is pretty lightweighted.
+
+## Working with Component Styles
