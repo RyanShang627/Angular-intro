@@ -147,3 +147,5 @@ export class ServersComponent implements OnInit {
 The principle is that if you have more than three lines of html code, it is better to write it inside an external html file; however, it is convenient to write the html code inside the typescript file if it is pretty lightweighted.
 
 ## Working with Component Styles
+
+You can either do that inside the html file or using external css file.
