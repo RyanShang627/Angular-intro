@@ -253,3 +253,22 @@ And we need to change the html file ('app.component.html') accordingly:
 </div>
 
 ```
+
+## Data Binding
+
+Databinding = Communication
+
+TypeScript Code (Business Logic) and Template (HTML). The only things the user sees is the template. Output Data from '.ts' to '.html'.
+
+There are two ways to bind the data from TypeScript Code to Template:
+
+1. String Interpolation ( `{{data}}` )
+2. Property Binding ( `[property]="data"` )
+
+And if you want to react to (User) Events, you should use Event Binding ( `(event)="expression"` )
+
+If you want to combine both, you can use the combination of both: Two-Way-Binding ( `[(ngModel)]="data"` ).
+
+### String Interpolation
+
+`{{ }}` is the expression of string interpolation. It is used in the case when the template intends to display the data in the model layer.
