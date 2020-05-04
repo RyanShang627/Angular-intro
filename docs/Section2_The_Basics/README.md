@@ -425,3 +425,40 @@ The basic idea is to have another `<ng-template></ng-template>` with the name.
   <p>No server was created!</p>
 </ng-template>
 ```
+
+### Styling Elements Dynamically with ngStyle
+
+The syntax should be `[ngStyle]="{'xx': 'xx'}"`
+
+Example:
+
+template:
+
+```html
+<p [ngStyle]="{ backgroundColor: getColor() }">
+  {{ "server" }} with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
+```
+
+data model:
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-server',
+  templateUrl: './server.component.html',
+})
+export class ServerComponent {
+  serverStatus: string = 'offline';
+
+  constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+  }
+
+  getColor() {
+    return this.serverStatus === 'online' ? 'green' : 'red';
+  }
+}
+
+```
