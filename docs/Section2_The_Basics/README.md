@@ -272,3 +272,32 @@ If you want to combine both, you can use the combination of both: Two-Way-Bindin
 ### String Interpolation
 
 `{{ }}` is the expression of string interpolation. It is used in the case when the template intends to display the data in the model layer.
+
+An interesting is that the method can be called in the string interpolation as well inside the template.
+
+Component html file:
+
+```html
+<p>{{ "server" }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+```
+
+Component ts file:
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-server',
+  templateUrl: './server.component.html',
+})
+export class ServerComponent {
+  serverId: number = 10;
+  serverStatus: string = 'offline';
+
+  // define the method
+  getServerStatus() {
+    return this.serverStatus;
+  }
+}
+
+```
