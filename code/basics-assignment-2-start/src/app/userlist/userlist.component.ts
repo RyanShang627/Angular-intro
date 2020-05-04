@@ -7,7 +7,12 @@ import { Component, OnInit } from "@angular/core";
 })
 export class UserlistComponent implements OnInit {
   username: "";
+
   constructor() {}
+
+  resetUsername() {
+    this.username = "";
+  }
 
   ngOnInit(): void {}
 }
