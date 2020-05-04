@@ -462,3 +462,63 @@ export class ServerComponent {
 }
 
 ```
+
+### Applying CSS Classes Dynamically with ngClass
+
+This can help bind the class based on the condition.
+
+Example:
+
+html code:
+```html
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{ online: serverStatus === 'online' }"
+>
+  {{ "server" }} with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
+
+```
+ts code:
+```typescript
+@Component({
+  selector: 'app-server',
+  templateUrl: './server.component.html',
+  styles: [
+    `
+      .online {
+        color: white;
+      }
+    `,
+  ],
+})
+```
+
+### Outputting Lists with ngFor
+`ngFor` is a commonly-used directive, especially for iterating a list.
+
+html code:
+```html
+<app-server *ngFor="let server of servers"></app-server>
+```
+
+ts code:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  // select by class
+  selector: 'app-servers',
+  templateUrl: './servers.component.html',
+  styleUrls: ['./servers.component.css'],
+})
+export class ServersComponent {
+
+  servers = ['TestServer', 'TestServer2'];
+
+  onCreateServer() {
+    this.servers.push(this.serverName);
+  }
+}
+
+```
