@@ -319,3 +319,60 @@ Angular uses `[]` to indicate the property binding.
 ```html
 <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
 ```
+
+### Property Binding vs String Interpolation
+
+They can be replaced in some cases:
+
+```html
+<!-- string interpolation -->
+<p>{{ allowNewServer }}</p>
+
+<!-- property binding -->
+<h4 [innerText]="allowNewServer"></h4>
+```
+
+Note: String interpolation only works in normal template.
+
+### Event Binding
+
+Event binding is very common behavior, especially when you want to do something when you click a button. Note: 'click/hover/keydown/etc.' are all events.
+
+In Vue.js, we use `@click="onSubmit()"` to bind the `onSubmit` method to the button, and this method or event will be triggered whent the button is clicked.
+
+In Angular, we use `(click)` to bind the event to the button, as the following example indicates:
+
+```html
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server$$
+</button>
+```
+
+### Passing and Using Data with Event Binding
+
+Important: FormsModule is Required for Two-Way-Binding!
+
+Important: For Two-Way-Binding (covered in the next lecture) to work, you need to enable the `ngModel` directive. This is done by adding the `FormsModule` to the `imports[]` array in the AppModule.
+
+You then also need to add the import from `@angular/forms` in the app.module.ts file:
+
+```typescript
+import { FormsModule } from '@angular/forms';
+```
+
+### Two-way Data Binding
+
+To bind the template and data model in two ways, you need to use the `[(ngModel)]="xxx"` syntax. The `xxx` is the data.
+
+Note: To make sure no bug, the FormsModule must be imported in the app module.
+
+html:
+
+```html
+<!-- Two way binding -->
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+```
