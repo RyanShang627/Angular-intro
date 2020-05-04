@@ -376,3 +376,52 @@ html:
 <!-- Two way binding -->
 <input type="text" class="form-control" [(ngModel)]="serverName" />
 ```
+
+## Directives
+
+Directives are Instructions in the DOM!
+
+Example:
+
+template:
+
+```html
+<p appTurnGreen>Receives a green background!</p>
+```
+
+data model:
+
+```typescript
+@Directive({
+  selector: '[appTurnGreen]'
+})
+
+export class TurnGreenDirective {
+  ...
+}
+```
+
+### Using ngIf to Output Data Conditionally
+
+Syntax:
+
+```html
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+```
+
+### Enhancing nglf with an Else Condition
+
+This is a bit more complicated than the same one in Vue.js since it has no `else` directive.
+
+The basic idea is to have another `<ng-template></ng-template>` with the name.
+
+```html
+<!-- declare the else case name in if condition -->
+<p *ngIf="serverCreated; else noServer">
+  Server was created, server name is {{ serverName }}
+</p>
+<!-- the else condition -->
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
+```
