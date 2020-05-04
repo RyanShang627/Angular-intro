@@ -301,3 +301,21 @@ export class ServerComponent {
 }
 
 ```
+
+### Property Binding
+
+Property binding is another way of binding data dynamically. Below is the property binding comparison between `Vue.js` and `Angular`:
+
+`Vue.js`:
+Vue uses `:` to indicate the property binding.
+
+```html
+<button class="btn btn-primary" :disabled="!allowNewServer">Add Server</button>
+```
+
+`Angular`:
+Angular uses `[]` to indicate the property binding.
+
+```html
+<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+```
