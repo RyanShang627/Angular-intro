@@ -62,3 +62,13 @@ export class Recipe {
   }
 }
 ```
+
+### Shortcut of the constructor of the TypeScript class
+
+As the above example shows, to create and assign the attributes of a TypeScript class, you need to define and assign them which is a bit lengthy. You can use the following syntax to do the same thing:
+
+```typescript
+export class Recipe {
+  constructor(public name: string, public desc: string, public imagePath: string) {}
+}
+```
