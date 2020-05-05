@@ -22,3 +22,21 @@ Model:
 Reminder: 
 
 Use `ng new PROJECT` to create a new project!
+
+### Skip generating test files
+
+At some points, it is not necessary to have the testing files, so when you use the Angular CLI to generate the component, you can select the option to skip the testing file:
+
+```bash
+ng g c recipes --skipTests true
+```
+
+### Generate a component with the path provided
+
+In some cases, we don't want to generate the component right under the app folder. Therefore, we can provide the path of the component.
+
+Example: Generate the recipe-list component under the recipes folder.
+
+```bash
+ng g c recipes/recipe-list --skipTests true
+```
