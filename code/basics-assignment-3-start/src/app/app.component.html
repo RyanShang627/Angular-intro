@@ -24,6 +24,7 @@
       </ol>
     </div>
   </div>
+
   <!-- assignment content -->
   <div class="row">
     <div class="col-xs-12">
@@ -36,10 +37,10 @@
       <ul>
         <li
           *ngFor="let element of logArray; index as i"
-          [ngClass]="{ largeLog: i >= 4 }"
-          [ngStyle]="{ backgroundColor: i >= 4 ? changeBackgroundColor() : '' }"
+          [ngClass]="{ 'white-text': i >= 4 }"
+          [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : '' }"
         >
-          {{ i + 1 }}. {{ element }}
+          {{ element }}
         </li>
       </ul>
     </div>

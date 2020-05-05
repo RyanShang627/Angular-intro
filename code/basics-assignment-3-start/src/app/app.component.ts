@@ -14,8 +14,4 @@ export class AppComponent {
     this.showParagraph = !this.showParagraph;
     this.logArray.push(Date.now());
   }
-
-  changeBackgroundColor() {
-    return "blue";
-  }
 }
