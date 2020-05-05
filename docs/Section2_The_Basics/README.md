@@ -348,7 +348,7 @@ In Angular, we use `(click)` to bind the event to the button, as the following e
   [disabled]="!allowNewServer"
   (click)="onCreateServer()"
 >
-  Add Server$$
+  Add Server
 </button>
 ```
 
