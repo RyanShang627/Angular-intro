@@ -40,3 +40,25 @@ Example: Generate the recipe-list component under the recipes folder.
 ```bash
 ng g c recipes/recipe-list --skipTests true
 ```
+
+## Creating a Model
+
+In the Angular, if you want to create a model, you'd better create a TypeScript file and define the class.
+
+For example, you want to create a "Recipe" model, then:
+
+You can create a ts file called "recipe.model.ts" with the following content:
+
+```typescript
+export class Recipe {
+  public name: string;
+  public description: string;
+  public imagePath: string;
+
+  constructor(name: string, desc: string, imagePath: string) {
+    this.name = name;
+    this.description = desc;
+    this.imagePath = imagePath;
+  }
+}
+```
